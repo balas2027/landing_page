@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Pills with Tabs Example</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <style>
+        body{
+            background: linear-gradient(to right, rgb(235, 187, 230), rgb(228, 132, 132));
+
+           
+            
+        }
+    </style>
+  <div class="container mt-3">
+    <!-- Navigation Pills -->
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">XEROX</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-services-tab" data-bs-toggle="pill" data-bs-target="#pills-services" type="button" role="tab" aria-controls="pills-services" aria-selected="false">BINDING</button>
+      </li>
+      
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">PAPER PLATE</button>
+      </li>
+
+    </ul>
+    <style>
+      /* Popup Styling */
+      #popup {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+  
+      #popup h3 {
+        margin-bottom: 10px;
+      }
+  
+      #popup button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+  
+      #popup button:hover {
+        background: #0056b3;
+      }
+  
+      /* Overlay Styling */
+      #overlay {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      }
+    </style>
+  </head>
+  <body>
+    
+  
+    <!-- Popup -->
+    <div id="overlay"></div>
+    <div id="popup">
+      <h3>Coming Soon</h3>
+      <p>This feature is under development. Stay tuned!</p>
+      <button id="closePopup">Close</button>
+    </div>
+  
+    <script>
+      // JavaScript for the Popup
+      const button = document.getElementById("pills-contact-tab");
+      const popup = document.getElementById("popup");
+      const overlay = document.getElementById("overlay");
+      const closeButton = document.getElementById("closePopup");
+  
+      // Show popup on button click
+      button.addEventListener("click", () => {
+        popup.style.display = "block";
+        overlay.style.display = "block";
+      });
+  
+      // Close popup when "Close" button is clicked
+      closeButton.addEventListener("click", () => {
+        popup.style.display = "none";
+        overlay.style.display = "none";
+      });
+  
+      // Close popup when clicking outside the popup
+      overlay.addEventListener("click", () => {
+        popup.style.display = "none";
+        overlay.style.display = "none";
+      });
+    </script>
+
+    <!-- Tab Contents -->
+    <div class="tab-content" id="pills-tabContent">
+        
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <table class="table table-striped">
+            
+            <thead>
+              <tr>
+                <th scope="col">S.no</th>
+                <th scope="col">Product</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Black & White (Single-side) A4</td>
+                <td>1</td>
+                <td>₹2</td>
+              </tr>
+
+              
+              <tr>
+                <th scope="row">2</th>
+                <td>Black & White (Double-side) A4</td>
+                <td>1</td>
+                <td>₹3</td>
+              </tr>
+
+              <tr>
+                <th scope="row">3</th>
+                <td>Black & White (Single-side) A3</td>
+                <td>1</td>
+                <td>₹5</td>
+              </tr>
+
+              <tr>
+                <th scope="row">4</th>
+                <td>Black & White (Double-side) A3</td>
+                <td>1</td>
+                <td>₹6</td>
+              </tr>
+
+              <tr>
+                <th scope="row">5</th>
+                <td>Black & White (Single-side) legal</td>
+                <td>1</td>
+                <td>₹3</td>
+              </tr>
+
+              <tr>
+                <th scope="row">6</th>
+                <td>Black & White (Double-side) legal</td>
+                <td>1</td>
+                <td>₹4</td>
+              </tr>
+
+              <tr>
+                <th scope="row">7</th>
+                <td>Black & White (Single-side) Bond-sheet</td>
+                <td>1</td>
+                <td>₹3</td>
+              </tr>
+
+              <tr>
+                <th scope="row">8</th>
+                <td>Black & White (Double-side) Bond-sheet</td>
+                <td>1</td>
+                <td>₹4</td>
+              </tr>
+
+              <tr>
+                <th scope="row">9</th>
+                <td>Color A4</td>
+                <td>1</td>
+                <td>₹10</td>
+              </tr>
+
+              <tr>
+                <th scope="row">10</th>
+                <td>Color Bond-sheet A4</td>
+                <td>1</td>
+                <td>₹15</td>
+              </tr>
+
+              <tr>
+                <th scope="row">11</th>
+                <td>Both B & W and color legal-sheet (green) </td>
+                <td>1</td>
+                <td>₹3</td>
+              </tr>
+
+             
+            </tbody>
+          </table>
+      </div>
+      <div class="tab-pane fade" id="pills-services" role="tabpanel" aria-labelledby="pills-services-tab">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                  <th scope="col">S.no</th>
+                  <th scope="col">Product</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Spiral Binding </td>
+                  <td>1-40 pages</td>
+                  <td>₹40</td>
+                </tr>
+  
+                
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Spiral Binding </td>
+                  <td>50+ pages</td>
+                  <td>₹50</td>
+                </tr>
+  
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Soft Binding </td>
+                  <td>-</td>
+                  <td>₹40</td>
+                </tr>
+  
+                <tr>
+                  <th scope="row">4</th>
+                  <td>Sipral Punching </td>
+                  <td>-</td>
+                  <td>₹20</td>
+                </tr>
+  
+                
+              
+               
+              </tbody>
+          </table>
+      </div>
+      
+         
+      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+        
+      </div>
+      <a href="index.html" class="btn btn-primary mb-3">Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
